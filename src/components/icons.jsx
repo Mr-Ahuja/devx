@@ -50,3 +50,23 @@ export const IconSpark = () => (
   </svg>
 )
 
+// New icons for specific tools
+export const IconGlobe = () => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="9" {...common}/>
+    <path {...common} d="M3 12h18M12 3a16 16 0 0 1 0 18M12 3a16 16 0 0 0 0 18"/>
+  </svg>
+)
+export const IconBase64 = () => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="4" width="6" height="6" {...common}/>
+    <rect x="14" y="4" width="6" height="6" {...common}/>
+    <rect x="4" y="14" width="6" height="6" {...common}/>
+    <rect x="14" y="14" width="6" height="6" {...common}/>
+  </svg>
+)
+export const IconUuid = () => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path {...common} d="M7 3v18M17 3v18M3 9h18M3 15h18"/>
+  </svg>
+)

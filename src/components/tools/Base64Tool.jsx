@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { IconSwap, IconTrash, IconLink, IconHome, IconCode } from '../icons.jsx'
+import { IconSwap, IconTrash, IconLink, IconHome, IconBase64 } from '../icons.jsx'
 
 function useQuery() { return new URLSearchParams(window.location.search) }
 function b64e(str) { return btoa(unescape(encodeURIComponent(str))) }
@@ -57,6 +57,11 @@ export function Base64Tool() {
 
   return (
     <div className="card" style={{ textAlign: 'left' }}>
+      <div className="card-actions-top">
+        <a className="btn icon-only" href={window.location.pathname} aria-label="All Tools">
+          <span className="icon"><IconHome/></span>
+        </a>
+      </div>
       <h2>Base64 — {modeLabel}</h2>
       <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
         <div style={{ flex: 1, minWidth: 280 }}>
@@ -75,7 +80,7 @@ export function Base64Tool() {
       )}
       <div className="cta" style={{ justifyContent: 'flex-start' }}>
         <button className="btn mellange block" onClick={run}>
-          <span className="icon"><IconCode/></span>
+          <span className="icon"><IconBase64/></span>
           <span>{modeLabel}</span>
         </button>
         <button className="btn block" onClick={() => onModeChange(mode === 'decode' ? 'encode' : 'decode')}>
@@ -90,10 +95,6 @@ export function Base64Tool() {
           <span className="icon"><IconLink/></span>
           <span>Copy Link</span>
         </button>
-        <a className="btn block" href={window.location.pathname}>
-          <span className="icon"><IconHome/></span>
-          <span>All Tools</span>
-        </a>
       </div>
     </div>
   )

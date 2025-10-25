@@ -77,6 +77,11 @@ export function DiffTool() {
 
   return (
     <div className="card" style={{ textAlign: 'left' }}>
+      <div className="card-actions-top">
+        <a className="btn icon-only" href={window.location.pathname} aria-label="All Tools">
+          <span className="icon"><IconHome/></span>
+        </a>
+      </div>
       <h2>Diff Checker</h2>
       <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
         <div style={{ flex: 1, minWidth: 280 }}>
@@ -116,10 +121,6 @@ export function DiffTool() {
           <span className="icon"><IconLink/></span>
           <span>Copy Link</span>
         </button>
-        <a className="btn block" href={window.location.pathname}>
-          <span className="icon"><IconHome/></span>
-          <span>All Tools</span>
-        </a>
       </div>
 
       {ops.length > 0 && (
