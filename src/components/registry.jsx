@@ -1,6 +1,10 @@
 import { JsonTool } from './tools/JsonTool.jsx'
 import { XmlTool } from './tools/XmlTool.jsx'
 import { DiffTool } from './tools/DiffTool.jsx'
+import { YamlTool } from './tools/YamlTool.jsx'
+import { UrlTool } from './tools/UrlTool.jsx'
+import { Base64Tool } from './tools/Base64Tool.jsx'
+import { UuidTool } from './tools/UuidTool.jsx'
 
 // Minimal inline SVG icons
 const JsonIcon = () => (
@@ -17,10 +21,9 @@ export const tools = {
   json: { label: 'JSON', Component: JsonTool, Icon: JsonIcon, phase: 1 },
   xml: { label: 'XML', Component: XmlTool, Icon: XmlIcon, phase: 1 },
   diff: { label: 'Diff Checker', Component: DiffTool, Icon: DiffIcon, phase: 1 },
-  // Phase 2 placeholders (not shown in home grid)
-  yaml: { label: 'YAML ⇄ JSON', Component: () => null, Icon: JsonIcon, phase: 2 },
-  url: { label: 'URL Encode/Decode', Component: () => null, Icon: DiffIcon, phase: 2 },
-  b64: { label: 'Base64 Encode/Decode', Component: () => null, Icon: DiffIcon, phase: 2 },
-  uuid: { label: 'UUID Generator', Component: () => null, Icon: DiffIcon, phase: 2 },
+  // Phase 2 tools
+  yaml: { label: 'YAML ⇄ JSON', Component: YamlTool, Icon: JsonIcon, phase: 2 },
+  url: { label: 'URL Encode/Decode', Component: UrlTool, Icon: DiffIcon, phase: 2 },
+  b64: { label: 'Base64 Encode/Decode', Component: Base64Tool, Icon: DiffIcon, phase: 2 },
+  uuid: { label: 'UUID Generator', Component: UuidTool, Icon: DiffIcon, phase: 2 },
 }
-

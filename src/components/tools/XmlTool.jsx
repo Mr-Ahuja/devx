@@ -43,6 +43,12 @@ export function XmlTool() {
   const [output, setOutput] = useState('')
   const [error, setError] = useState('')
 
+  React.useEffect(() => {
+    const v = query.get('v')
+    if (v) setInput((() => { try { return decodeURIComponent(escape(atob(v))) } catch { return '' } })())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const modeLabel = useMemo(() => mode === 'validate' ? 'Validate' : 'Format', [mode])
 
   function onModeChange(next) {
@@ -81,6 +87,7 @@ export function XmlTool() {
     const url = new URL(window.location.href)
     url.searchParams.set('tool', 'xml')
     url.searchParams.set('mode', mode)
+    try { url.searchParams.set('v', btoa(unescape(encodeURIComponent(input)))) } catch {}
     await navigator.clipboard.writeText(url.toString())
   }
 
@@ -132,4 +139,3 @@ export function XmlTool() {
     </div>
   )
 }
-

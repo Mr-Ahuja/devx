@@ -21,6 +21,13 @@ export function JsonTool() {
   const [output, setOutput] = useState('')
   const [error, setError] = useState('')
 
+  // Load input from URL if provided
+  React.useEffect(() => {
+    const v = query.get('v')
+    if (v) setInput((() => { try { return decodeURIComponent(escape(atob(v))) } catch { return '' } })())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const modeLabel = useMemo(() => mode === 'validate' ? 'Validate' : 'Format', [mode])
 
   function onModeChange(next) {
@@ -58,6 +65,8 @@ export function JsonTool() {
     const url = new URL(window.location.href)
     url.searchParams.set('tool', 'json')
     url.searchParams.set('mode', mode)
+    // include input as base64
+    try { url.searchParams.set('v', btoa(unescape(encodeURIComponent(input)))) } catch {}
     await navigator.clipboard.writeText(url.toString())
   }
 
@@ -109,4 +118,3 @@ export function JsonTool() {
     </div>
   )
 }
-

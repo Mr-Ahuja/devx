@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { ToolRouter } from './components/ToolRouter.jsx'
 import { IconGrid } from './components/IconGrid.jsx'
+import { ThemeToggle } from './components/ThemeToggle.jsx'
 import { mountConstellation } from './lib/constellation.js'
 
 function useQuery() {
@@ -21,7 +22,11 @@ export default function App() {
     <div className="page">
       <canvas ref={canvasRef} className="bg-constellation" aria-hidden="true"></canvas>
       <header className="content" style={{paddingBottom: 0, textAlign: 'center'}}>
-        <img className="logo" src="logo.svg" alt="DevX logo" />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ width: 64 }} />
+          <img className="logo" src="logo.svg" alt="DevX logo" />
+          <ThemeToggle />
+        </div>
         <h1 className="title">DevX — Developer Tools</h1>
         <p className="sublead">Fast, client‑side utilities with shareable deep links.</p>
       </header>
