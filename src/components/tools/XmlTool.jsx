@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react'
+import { IconCode, IconCheck, IconSwap, IconTrash, IconLink, IconHome } from '../icons.jsx'
 
 function useQuery() {
   return new URLSearchParams(window.location.search)
@@ -128,13 +129,26 @@ export function XmlTool() {
       )}
 
       <div className="cta" style={{ justifyContent: 'flex-start' }}>
-        <button className="btn mellange" onClick={act}>{modeLabel}</button>
-        <button className="btn" onClick={() => onModeChange(mode === 'validate' ? 'format' : 'validate')}>
-          Switch to {mode === 'validate' ? 'Format' : 'Validate'}
+        <button className="btn mellange block" onClick={act}>
+          <span className="icon">{mode === 'validate' ? <IconCheck/> : <IconCode/>}</span>
+          <span>{modeLabel}</span>
         </button>
-        <button className="btn" onClick={clearAll}>Clear</button>
-        <button className="btn" onClick={copyLink}>Copy Link</button>
-        <a className="btn" href={window.location.pathname}>All Tools</a>
+        <button className="btn block" onClick={() => onModeChange(mode === 'validate' ? 'format' : 'validate')}>
+          <span className="icon"><IconSwap/></span>
+          <span>Switch to {mode === 'validate' ? 'Format' : 'Validate'}</span>
+        </button>
+        <button className="btn block" onClick={clearAll}>
+          <span className="icon"><IconTrash/></span>
+          <span>Clear</span>
+        </button>
+        <button className="btn block" onClick={copyLink}>
+          <span className="icon"><IconLink/></span>
+          <span>Copy Link</span>
+        </button>
+        <a className="btn block" href={window.location.pathname}>
+          <span className="icon"><IconHome/></span>
+          <span>All Tools</span>
+        </a>
       </div>
     </div>
   )

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import { IconCompare, IconSwap, IconTrash, IconLink, IconHome } from '../icons.jsx'
 
 function useQuery() {
   return new URLSearchParams(window.location.search)
@@ -99,11 +100,26 @@ export function DiffTool() {
       </div>
 
       <div className="cta" style={{ justifyContent: 'flex-start' }}>
-        <button className="btn mellange" onClick={compare}>Compare</button>
-        <button className="btn" onClick={swap}>Swap</button>
-        <button className="btn" onClick={clearAll}>Clear</button>
-        <button className="btn" onClick={copyLink}>Copy Link</button>
-        <a className="btn" href={window.location.pathname}>All Tools</a>
+        <button className="btn mellange block" onClick={compare}>
+          <span className="icon"><IconCompare/></span>
+          <span>Compare</span>
+        </button>
+        <button className="btn block" onClick={swap}>
+          <span className="icon"><IconSwap/></span>
+          <span>Swap</span>
+        </button>
+        <button className="btn block" onClick={clearAll}>
+          <span className="icon"><IconTrash/></span>
+          <span>Clear</span>
+        </button>
+        <button className="btn block" onClick={copyLink}>
+          <span className="icon"><IconLink/></span>
+          <span>Copy Link</span>
+        </button>
+        <a className="btn block" href={window.location.pathname}>
+          <span className="icon"><IconHome/></span>
+          <span>All Tools</span>
+        </a>
       </div>
 
       {ops.length > 0 && (
@@ -121,4 +137,3 @@ export function DiffTool() {
     </div>
   )
 }
-

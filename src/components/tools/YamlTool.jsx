@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import YAML from 'yaml'
+import { IconSwap, IconTrash, IconLink, IconHome, IconCode } from '../icons.jsx'
 
 function useQuery() { return new URLSearchParams(window.location.search) }
 
@@ -83,15 +84,27 @@ export function YamlTool() {
       )}
 
       <div className="cta" style={{ justifyContent: 'flex-start' }}>
-        <button className="btn mellange" onClick={convert}>Convert</button>
-        <button className="btn" onClick={() => onModeChange(mode === 'yaml2json' ? 'json2yaml' : 'yaml2json')}>
-          Switch to {mode === 'yaml2json' ? 'JSON → YAML' : 'YAML → JSON'}
+        <button className="btn mellange block" onClick={convert}>
+          <span className="icon"><IconCode/></span>
+          <span>Convert</span>
         </button>
-        <button className="btn" onClick={clearAll}>Clear</button>
-        <button className="btn" onClick={copyLink}>Copy Link</button>
-        <a className="btn" href={window.location.pathname}>All Tools</a>
+        <button className="btn block" onClick={() => onModeChange(mode === 'yaml2json' ? 'json2yaml' : 'yaml2json')}>
+          <span className="icon"><IconSwap/></span>
+          <span>Switch to {mode === 'yaml2json' ? 'JSON → YAML' : 'YAML → JSON'}</span>
+        </button>
+        <button className="btn block" onClick={clearAll}>
+          <span className="icon"><IconTrash/></span>
+          <span>Clear</span>
+        </button>
+        <button className="btn block" onClick={copyLink}>
+          <span className="icon"><IconLink/></span>
+          <span>Copy Link</span>
+        </button>
+        <a className="btn block" href={window.location.pathname}>
+          <span className="icon"><IconHome/></span>
+          <span>All Tools</span>
+        </a>
       </div>
     </div>
   )
 }
-

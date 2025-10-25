@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import { IconSwap, IconTrash, IconLink, IconHome, IconCode } from '../icons.jsx'
 
 function useQuery() { return new URLSearchParams(window.location.search) }
 function b64e(str) { return btoa(unescape(encodeURIComponent(str))) }
@@ -73,15 +74,27 @@ export function Base64Tool() {
         </div>
       )}
       <div className="cta" style={{ justifyContent: 'flex-start' }}>
-        <button className="btn mellange" onClick={run}>{modeLabel}</button>
-        <button className="btn" onClick={() => onModeChange(mode === 'decode' ? 'encode' : 'decode')}>
-          Switch to {mode === 'decode' ? 'Encode' : 'Decode'}
+        <button className="btn mellange block" onClick={run}>
+          <span className="icon"><IconCode/></span>
+          <span>{modeLabel}</span>
         </button>
-        <button className="btn" onClick={clearAll}>Clear</button>
-        <button className="btn" onClick={copyLink}>Copy Link</button>
-        <a className="btn" href={window.location.pathname}>All Tools</a>
+        <button className="btn block" onClick={() => onModeChange(mode === 'decode' ? 'encode' : 'decode')}>
+          <span className="icon"><IconSwap/></span>
+          <span>Switch to {mode === 'decode' ? 'Encode' : 'Decode'}</span>
+        </button>
+        <button className="btn block" onClick={clearAll}>
+          <span className="icon"><IconTrash/></span>
+          <span>Clear</span>
+        </button>
+        <button className="btn block" onClick={copyLink}>
+          <span className="icon"><IconLink/></span>
+          <span>Copy Link</span>
+        </button>
+        <a className="btn block" href={window.location.pathname}>
+          <span className="icon"><IconHome/></span>
+          <span>All Tools</span>
+        </a>
       </div>
     </div>
   )
 }
-

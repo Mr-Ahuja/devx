@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { IconSpark, IconCopy, IconHome } from '../icons.jsx'
 
 export function UuidTool() {
   const [uuids, setUuids] = useState([])
@@ -18,10 +19,22 @@ export function UuidTool() {
     <div className="card" style={{ textAlign: 'left' }}>
       <h2>UUID Generator</h2>
       <div className="cta" style={{ justifyContent: 'flex-start' }}>
-        <button className="btn mellange" onClick={() => generate(1)}>Generate</button>
-        <button className="btn" onClick={() => generate(5)}>Generate 5</button>
-        <button className="btn" onClick={copyFirst} disabled={!uuids[0]}>Copy First</button>
-        <a className="btn" href={window.location.pathname}>All Tools</a>
+        <button className="btn mellange block" onClick={() => generate(1)}>
+          <span className="icon"><IconSpark/></span>
+          <span>Generate</span>
+        </button>
+        <button className="btn block" onClick={() => generate(5)}>
+          <span className="icon"><IconSpark/></span>
+          <span>Generate 5</span>
+        </button>
+        <button className="btn block" onClick={copyFirst} disabled={!uuids[0]}>
+          <span className="icon"><IconCopy/></span>
+          <span>Copy First</span>
+        </button>
+        <a className="btn block" href={window.location.pathname}>
+          <span className="icon"><IconHome/></span>
+          <span>All Tools</span>
+        </a>
       </div>
       <div className="panel glass" style={{ marginTop: 16, fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace', fontSize: 14 }}>
         {uuids.length === 0 ? 'Click Generate to create a UUID' : (
@@ -33,4 +46,3 @@ export function UuidTool() {
     </div>
   )
 }
-

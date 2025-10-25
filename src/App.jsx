@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { ToolRouter } from './components/ToolRouter.jsx'
 import { IconGrid } from './components/IconGrid.jsx'
-import { ThemeToggle } from './components/ThemeToggle.jsx'
 import { mountConstellation } from './lib/constellation.js'
 
 function useQuery() {
@@ -22,11 +21,7 @@ export default function App() {
     <div className="page">
       <canvas ref={canvasRef} className="bg-constellation" aria-hidden="true"></canvas>
       <header className="content" style={{paddingBottom: 0, textAlign: 'center'}}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ width: 64 }} />
-          <img className="logo" src="logo.svg" alt="DevX logo" />
-          <ThemeToggle />
-        </div>
+        <img className="logo" src="logo.svg" alt="DevX logo" />
         <h1 className="title">DevX — Developer Tools</h1>
         <p className="sublead">Fast, client‑side utilities with shareable deep links.</p>
       </header>
@@ -36,7 +31,7 @@ export default function App() {
       </main>
 
       <footer className="site-footer">
-        <span>Project by DevX • Theme: the‑choosen‑one</span>
+        <span>DevX by The Chosen One <a href="https://preetam.thechosenone.in/" target="_blank" rel="noopener noreferrer">Preetam Ahuja</a></span>
       </footer>
     </div>
   )
