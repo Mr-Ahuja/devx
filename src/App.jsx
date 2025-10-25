@@ -20,7 +20,8 @@ export default function App() {
   return (
     <div className="page">
       <canvas ref={canvasRef} className="bg-constellation" aria-hidden="true"></canvas>
-      <header className="content" style={{paddingBottom: 0}}>
+      <header className="content" style={{paddingBottom: 0, textAlign: 'center'}}>
+        <img className="logo" src="logo.svg" alt="DevX logo" />
         <h1 className="title">DevX — Developer Tools</h1>
         <p className="sublead">Fast, client‑side utilities with shareable deep links.</p>
       </header>
@@ -35,4 +36,3 @@ export default function App() {
     </div>
   )
 }
-
