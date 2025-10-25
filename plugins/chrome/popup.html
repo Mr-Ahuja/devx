@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DevX</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <div class="popup">
+      <div class="header">
+        <img src="../assets/logo.svg" alt="DevX" class="logo" />
+        <span class="title">DevX</span>
+      </div>
+      <div class="grid">
+        <button data-tool="json">
+          <span class="icon">{}</span>
+          <span>JSON</span>
+        </button>
+        <button data-tool="xml">
+          <span class="icon">&lt;/&gt;</span>
+          <span>XML</span>
+        </button>
+        <button data-tool="diff">
+          <span class="icon">≠</span>
+          <span>Diff</span>
+        </button>
+        <button id="open-devx">
+          <span class="icon">★</span>
+          <span>Open DevX</span>
+        </button>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+  </html>
+

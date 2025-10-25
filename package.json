@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --port 5173"
+    "preview": "vite preview --port 5173",
+    "gen:icons": "node scripts/generate-icons.mjs",
+    "package:ext": "node scripts/package-extension.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -16,7 +18,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.3",
-    "vite": "^5.4.8"
+    "vite": "^5.4.8",
+    "sharp": "^0.33.3"
   },
   "engines": {
     "node": ">=18"

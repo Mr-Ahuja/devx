@@ -1,0 +1,12 @@
+:root { --bg:#0b0f14; --fg:#e6eef7; --muted:#a6b3c2; --glass: rgba(255,255,255,0.06); }
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font:14px/1.4 Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;min-width:280px}
+.popup{padding:10px 12px;}
+.header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.logo{width:20px;height:20px;opacity:.95}
+.title{font-weight:700;letter-spacing:.2px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.grid button{cursor:pointer;border:1px solid #1e2733;background:#0f151d;color:var(--fg);padding:10px;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:6px;min-height:72px}
+.grid button:hover{border-color:#2a3647;background:#121a24}
+.icon{font-weight:800}
+
