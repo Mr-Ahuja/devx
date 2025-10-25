@@ -1,5 +1,5 @@
 import React from 'react'
-import { tools } from './registry.js'
+import { tools } from './registry.jsx'
 
 function navigateToTool(key) {
   const url = new URL(window.location.href)
@@ -36,4 +36,3 @@ export function IconGrid() {
     </div>
   )
 }
-

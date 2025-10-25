@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { tools } from './registry.js'
+import { tools } from './registry.jsx'
 
 function useQuery() {
   return new URLSearchParams(window.location.search)
@@ -24,4 +24,3 @@ export function ToolRouter() {
 
   return <ToolComp />
 }
-
