@@ -30,15 +30,9 @@ export function IconGrid() {
           style={{ width: '100%', padding: '10px 12px', borderRadius: 12, background: '#0f151d', color: 'var(--fg)', border: '1px solid #223042' }}
         />
       </div>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
-        gap: '14px',
-        marginTop: '16px'
-      }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '14px', marginTop: '16px' }}>
         {items.map(({ key, label, Icon }) => (
-          <button key={key} className="btn" onClick={() => navigateToTool(key)}
-            aria-label={`Open ${label}`} style={{ justifyContent: 'flex-start' }}>
+          <button key={key} className="btn tile" onClick={() => navigateToTool(key)} aria-label={`Open ${label}`}>
             <span className="icon"><Icon /></span>
             <span>{label}</span>
           </button>

@@ -23,7 +23,7 @@ export default function App() {
       <header className="content" style={{paddingBottom: 0, textAlign: 'center'}}>
         <img className="logo" src="logo.svg" alt="DevX logo" />
         <h1 className="title">DevX — Developer Tools</h1>
-        <p className="sublead">Fast, client‑side utilities with shareable deep links.</p>
+        <p className="sublead">From JSON to done — in one tab.</p>
       </header>
 
       <main className="content">
