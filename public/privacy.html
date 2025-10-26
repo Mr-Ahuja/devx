@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevX – Privacy Policy</title>
+    <meta name="description" content="Privacy policy for the DevX web app and Chrome extension." />
+    <style>
+      :root { color-scheme: light dark; }
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;
+             margin: 0; padding: 2rem; line-height: 1.5; max-width: 900px; }
+      main { margin: 0 auto; }
+      h1, h2 { line-height: 1.2; }
+      h1 { margin-bottom: .25rem; }
+      .muted { opacity: .7; font-size: .95rem; }
+      section { margin: 1.25rem 0; }
+      code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+      ul { padding-left: 1.25rem; }
+      .card { border: 1px solid rgba(127,127,127,.25); border-radius: 12px; padding: 1rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Privacy Policy</h1>
+      <div class="muted">Effective: <span id="effective-date"></span></div>
+
+      <section class="card">
+        <p>
+          This policy covers the DevX web application and the accompanying browser extension (the “Extension”).
+          DevX provides client‑side developer utilities (e.g., JSON/XML formatting and a Diff tool).
+        </p>
+        <p>
+          In short: DevX does not collect, transmit, or sell your personal data. All processing happens locally in your browser.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data Collection</h2>
+        <ul>
+          <li>No account, login, or personal identifiers are required.</li>
+          <li>No analytics, tracking pixels, or cookies are used.</li>
+          <li>No data you enter into the tools is sent to our servers; processing is performed entirely client‑side.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Extension Permissions</h2>
+        <p>
+          The current Extension version (<span class="mono">0.1.0</span>) does not request any optional or host permissions. It only provides a popup UI.
+        </p>
+        <p>
+          If a future version requires additional permissions, this page will list what changed and why in the version history below.
+        </p>
+      </section>
+
+      <section>
+        <h2>Processing & Storage</h2>
+        <ul>
+          <li>Inputs you paste or type are processed in memory within your browser.</li>
+          <li>Nothing is uploaded to external services unless you explicitly choose to share content elsewhere.</li>
+          <li>Some features may use URL parameters (e.g., base64 text for Diff deep‑links). Be mindful that sharing such links shares the encoded content in the URL.</li>
+          <li>No persistent storage is used by the Extension for your content. If a future version stores preferences, they will reside only in your browser (e.g., local storage).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Third‑Party Sharing</h2>
+        <p>
+          DevX does not share any data with third parties. There are no embedded third‑party trackers.
+        </p>
+      </section>
+
+      <section>
+        <h2>Your Choices</h2>
+        <ul>
+          <li>Use the tools without logging in or identifying yourself.</li>
+          <li>Avoid sharing deep‑link URLs if they contain sensitive content in query parameters.</li>
+          <li>Close the page or clear the URL to remove any embedded content in the address bar.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Security</h2>
+        <p>
+          DevX aims to minimize risk by operating entirely client‑side and requesting minimal permissions. As with any software, avoid pasting sensitive data on shared or untrusted devices.
+        </p>
+      </section>
+
+      <section>
+        <h2>Changes to This Policy</h2>
+        <p>
+          We may update this policy when functionality or permissions change. Material changes will be reflected in the version history below.
+        </p>
+      </section>
+
+      <section>
+        <h2>Version History (Privacy‑Impacting Changes)</h2>
+        <ul>
+          <li>
+            <strong>0.1.0</strong> – Initial release of the Extension. No data collection, no analytics, no host permissions.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>
+          Have a question or concern? Please open an issue in the project repository or contact the maintainers.
+        </p>
+        <p class="muted">
+          Tip for maintainers: replace this line with your preferred contact email or support URL.
+        </p>
+      </section>
+
+      <script>
+        // Render today's date as the effective date by default.
+        const fmt = new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+        document.getElementById('effective-date').textContent = fmt.format(new Date());
+      </script>
+    </main>
+  </body>
+</html>
+

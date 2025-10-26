@@ -21,6 +21,11 @@ Package for Web Store
 - Cross-platform packaging (Windows uses PowerShell Compress-Archive; Linux/Mac uses `zip`):
   - pnpm package:ext
 
+Privacy Policy (for Store listing)
+- Use the deployed policy URL in the Web Store privacy section:
+  - `https://mr-ahuja.github.io/devx/privacy.html`
+  - If you host DevX elsewhere, replace the domain accordingly.
+
 Load Unpacked (for local testing)
 1) Run `pnpm gen:icons` to ensure `plugins/chrome/icons/` exists.
 2) Visit `chrome://extensions` and enable Developer mode.
@@ -29,4 +34,3 @@ Load Unpacked (for local testing)
 Default Links
 - Popup opens the live site at `https://mr-ahuja.github.io/devx/` and tool deep links like `?tool=json`.
 - Update `plugins/chrome/popup.js` DEFAULT_BASE if you host DevX elsewhere.
-

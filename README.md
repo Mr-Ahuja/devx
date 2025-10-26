@@ -42,3 +42,6 @@ Structure
 Security/Privacy
 - All tools run fully client-side; no data leaves the browser.
 
+Privacy Policy
+- A store-ready privacy policy is available at `public/privacy.html` and will be deployed to your Pages site.
+- After deployment, use this URL in the Web Store privacy section: `https://mr-ahuja.github.io/devx/privacy.html` (update the domain if you host elsewhere).
